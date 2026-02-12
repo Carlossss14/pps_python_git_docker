@@ -1,9 +1,7 @@
 # pps_python_git_docker
 
-# Ejercicio 2
+# Ejercicio 6
 
-1: Instalamos esta version de Pyhton
- sudo apt install python3.8-venv
 
 2: Crear el entorno virtual:
  python3 -m venv venv
@@ -16,3 +14,7 @@
 
 5: Ejecutar la aplicación
  python3 app.py
+
+6: La aplicación se encuentra
+ http://127.0.0.1:5000/
+ http://127.0.0.1:5000/frotar/3
