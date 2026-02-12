@@ -7,7 +7,7 @@ app = Flask(__name__)
 def hola():
     return "<h1>Hola, mundo</h1>"
 
-@app.route("/frotar/<int:n_frases>", methods=["GET"])
+@app.route("/frotar/<int:n_frases>")
 def endpoint_frotar(n_frases):
     frases = frotar(n_frases)
     return jsonify(frases)
