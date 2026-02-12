@@ -21,7 +21,7 @@ WORKDIR /app
 COPY --from=builder /install /usr/local
 
 # Copiar el código de la aplicación
-COPY app.py bayeta.py frases.txt ./
+COPY app.py bayeta.py mongo_utils.py frases.txt ./
 
 # Exponer el puerto donde corre Flask
 EXPOSE 5000

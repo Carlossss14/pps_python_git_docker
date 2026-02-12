@@ -1,6 +1,6 @@
 # pps_python_git_docker
 
-# Bayeta de la Fortuna – Python + Flask + Docker
+#  Bayeta de la Fortuna – Python + Flask + Docker + MongoDB
 
 # Ejercicio 8 local
 
@@ -24,17 +24,20 @@
  http://127.0.0.1:5000/frotar/3
 
 
-# Con Docker contenedor
+# Despliegue con Docker
 
-1:Construir la imagen
- docker build -t bayeta-fortuna:latest .
+1:Crear red Docker
+ sudo docker network create bayeta-net
 
-2:Corre este comando
- sudo docker build -t bayeta-fortuna:latest .
+2:Levantar MongoDB
+ sudo docker run -d --name mongo-bayeta --network bayeta-net mongo
 
-3: Corre este comando
- sudo docker run --rm -p 5000:5000 bayeta-fortuna:latest
+3: Construir la imagen de la API
+ sudo docker build -t bayeta-fortuna:latest . 
 
-4: La aplicación estará disponible en:
-  http://127.0.0.1:5000/
-  http://127.0.0.1:5000/frotar/3
+4: Ejecutar la API conectada a MongoDB
+ sudo docker run --rm -p 5000:5000 --network bayeta-net bayeta-fortuna
+
+5: La API estará disponible en:
+http://127.0.0.1:5000/
+

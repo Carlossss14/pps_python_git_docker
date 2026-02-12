@@ -1,5 +1,9 @@
 from flask import Flask, jsonify
 from bayeta import frotar
+from mongo_utils import inicializar
+
+# Inicializar Mongo al arrancar el contenedor
+inicializar()
 
 app = Flask(__name__)
 
