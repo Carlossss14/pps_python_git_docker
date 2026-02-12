@@ -1,7 +1,18 @@
 # pps_python_git_docker
 
-# Ejercicio 1
-# Aplicación de Galleta de la Fortuna
+# Ejercicio 2
 
-Esta aplicación genera frases al estilo de galleta de la fortuna o servilleta de bar.
-Cada vez que se ejecuta, muestra un mensaje aleatorio con sabiduría dudosa pero divertida.
+1: Instalamos esta version de Pyhton
+ sudo apt install python3.8-venv
+
+2: Crear el entorno virtual:
+ python3 -m venv venv
+
+3: Ahora lo activamos
+ source venv/bin/activate
+
+4: Instalar dependencia
+ pip install -r requirements.txt
+
+5: Ejecutar la aplicación
+ python3 app.py
