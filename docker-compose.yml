@@ -1,0 +1,24 @@
+version: '3.3'
+
+services:
+  mongo:
+    image: mongo
+    container_name: mongo-bayeta
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  bayeta:
+    build: .
+    container_name: bayeta-fortuna
+    depends_on:
+      - mongo
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+
+volumes:
+  mongo_data:

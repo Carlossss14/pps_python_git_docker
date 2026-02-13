@@ -1,8 +1,4 @@
 venv/
 __pycache__/
 *.pyc
-.git
-.gitignore
-Dockerfile
-README.md
-*.log
+compose.yml
