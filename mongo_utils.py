@@ -33,3 +33,15 @@ def consultar(n_frases: int):
     frases = list(coleccion.aggregate([{"$sample": {"size": n_frases}}]))
     cliente.close()
     return [f["frase"] for f in frases]
+
+
+
+def insertar(frases: list):
+    """
+    Inserta una lista de frases en MongoDB.
+    Cada frase debe ser un string.
+    """
+    cliente, coleccion = instanciar()
+    documentos = [{"frase": f} for f in frases]
+    coleccion.insert_many(documentos)
+    cliente.close()
